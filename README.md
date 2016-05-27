@@ -7,4 +7,6 @@ From the preface of The Little Schemer (4th edition)
 > The goal of this book is to teach the reader to think recursively.
 
 To run the tests run:
-    mix test
+```
+mix test
+```
