@@ -6,7 +6,7 @@ defmodule DoItDoItAgain do
   #other wise it passes. This is cover the case that one of
   #the elements is a list and return false.
   def elixir_lat?([[_|_]|_]), do: false
-  def elixir_lat?([h|t]), do: elixir_lat?(t)
+  def elixir_lat?([_|t]), do: elixir_lat?(t)
 
   #Elixir makes lat? easier with pattern matching
   #on [h|t] but I've implemented lat? as defined in the
@@ -21,5 +21,10 @@ defmodule DoItDoItAgain do
       true -> false
     end
   end
+
+
+  def member?(_item, []), do: false
+  def member?(item, [item|_]), do: true
+  def member?(item, [_|t]), do: member?(item, t)
 
 end
