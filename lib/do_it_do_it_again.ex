@@ -2,13 +2,11 @@ defmodule DoItDoItAgain do
   import Toys
 
   def elixir_lat?([]), do: true
-  def elixir_lat?([h|t]) do
-    if(atom?(h)) do
-      elixir_lat?(t)
-    else
-      false
-    end
-  end
+  #lat? fails if any of the elements in the list are a list
+  #other wise it passes. This is cover the case that one of
+  #the elements is a list and return false.
+  def elixir_lat?([[_|_]|_]), do: false
+  def elixir_lat?([h|t]), do: elixir_lat?(t)
 
   #Elixir makes lat? easier with pattern matching
   #on [h|t] but I've implemented lat? as defined in the
